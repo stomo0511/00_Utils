@@ -64,6 +64,12 @@ void Set_Iden(const int n, double* A)
             (i == j) ? A[i + j*n] = 1.0 : A[i + j*n] = A[j + i*n] = 0.0;
 }
 
+void Set_Zero(const int n, double* A)
+{
+    for (int i=0; i<n*n; i++)
+        A[i] = 0.0;
+}
+
 void cm2ccrb(const int m, const int n, const int mb, const int nb, const double* A, double* B)
 {
     const int p =  (m % mb == 0) ? m/mb : m/mb+1;   // # tile rows
